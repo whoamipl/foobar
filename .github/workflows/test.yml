@@ -1,6 +1,8 @@
-name: Publish
+name: Publish2
 
-on: ["pull_request"]
+on:
+  workflow_run:
+    workflows: ["Publish"]
 
 jobs:
   build-and-test-and-publish:
