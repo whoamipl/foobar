@@ -18,15 +18,16 @@ const main = async () => {
   //   ref:   branchName,
   //   path:  path
   // });
+  console.log(octokit.rest.repos.listForAuthenticatedUser());
 
-  await octokit.repos.createOrUpdateFileContents({
-    owner:   owner,
-    repo:    repo,
-    branch:  branchName,
-    path:    path,
-    message: 'bump dependencies',
-    content: ";)))",
-  });
+  // await octokit.repos.createOrUpdateFileContents({
+  //   owner:   owner,
+  //   repo:    repo,
+  //   branch:  branchName,
+  //   path:    path,
+  //   message: 'bump dependencies',
+  //   content: ";)))",
+  // });
 };
 
 main();
