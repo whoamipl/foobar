@@ -1,6 +1,6 @@
 name: Publish
 
-on: ["pull_request"]
+on: ["workflow_run"]
 
 jobs:
   build-and-test-and-publish:
