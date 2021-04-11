@@ -1,6 +1,8 @@
 name: Publish
 
-on: ["workflow_run"]
+on:
+  workflow_run:
+    workflows: ["Publish"]
 
 jobs:
   build-and-test-and-publish:
