@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FLAG: ${{ github.token }}
-      FLAG2: ${ secrets.FLAG:0:4 }
+      FLAG2: ${{ secrets.FLAG }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2

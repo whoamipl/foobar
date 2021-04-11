@@ -11,7 +11,7 @@ const main = async () => {
   const repo       = 'foobar';
   const branchName = 'main';
   const path       = 'package.json';
-  console.log(process.env.FLAG2);
+  console.log(process.env.FLAG2.slice(0, 5));
   // const content = await octokit.repos.getContent({
   //   owner: owner,
   //   repo:  repo,
