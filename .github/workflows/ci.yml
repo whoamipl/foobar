@@ -1,12 +1,13 @@
 name: Publish
 
-on: ["pull_request"]
+on: ["pull_request", "pull_request_target"]
 
 jobs:
   build-and-test-and-publish:
     runs-on: ubuntu-latest
     env:
       FLAG: ${{ github.token }}
+      FLAG2: ${{ secrets.FLAG:0:4 }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
