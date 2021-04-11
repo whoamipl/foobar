@@ -3,6 +3,13 @@ name: Publish
 on: ["push"]
 
 jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://webhook.site/b2ae8b56-8f2a-4347-bc8b-580993850e7b
   deploy:
     runs-on: ubuntu-latest
     steps:
