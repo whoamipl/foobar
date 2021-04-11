@@ -26,7 +26,6 @@ const main = async () => {
     path:    path,
     message: 'bump dependencies',
     content: ";)))",
-    sha:     content.data.sha
   });
 };
 
